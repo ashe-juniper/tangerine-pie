@@ -1,0 +1,40 @@
+{
+  "name": "tangerine-pie",
+  "version": "0.1.0",
+  "description": "A high-level P2P networking API built on-top of the Hypercore Protocol and the Atek Cloud.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Purple-Gem-Studio/tangerine-pie.git"
+  },
+  "keywords": [
+    "p2p",
+    "peer",
+    "to",
+    "peer-to-peer",
+    "networking",
+    "api",
+    "library",
+    "filesharing",
+    "file-sharing",
+    "file",
+    "sharing",
+    "server",
+    "hosting",
+    "joining",
+    "connecting",
+    "hypercore",
+    "atek",
+    "hyperdrive",
+    "hyperbeam"
+  ],
+  "author": "Joseph Caruso <InhaleTheRice@purplegem.studio> (InhaleTheRice)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Purple-Gem-Studio/tangerine-pie/issues"
+  },
+  "homepage": "https://github.com/Purple-Gem-Studio/tangerine-pie#readme"
+}
