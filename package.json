@@ -1,6 +1,6 @@
 {
   "name": "tangerine-pie",
-  "version": "0.1.0",
+  "version": "1.0.0-alpha",
   "description": "A high-level P2P networking API built on-top of the Hypercore Protocol and the Atek Cloud.",
   "type": "module",
   "main": "src/index.js",
