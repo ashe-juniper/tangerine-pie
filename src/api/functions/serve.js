@@ -7,9 +7,3 @@ export async function serve(path) {
 
     return publicKey;
 }
-
-export async function serveSync(path) {
-    await (async () => {
-        await serve(path);
-    })();
-}

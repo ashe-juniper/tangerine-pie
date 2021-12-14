@@ -77,5 +77,7 @@ export class WebServer {
         this._publicKey = node.publicKeyB32;
         
         this._isRunning = true;
+
+        return this._publicKey;
     }
 }
