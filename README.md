@@ -54,6 +54,12 @@ try {
                     // not the server's.
     });
     
+    // At this point, you can now join the world by doing the following from the main menu in-game:
+    // 1. Press `Multiplayer`.
+    // 2. Press `Direct Connect`.
+    // 3. Type `localhost` as the server IP.
+    // 4. Press `Connect` to join the server.
+    
     // There are a few QoL functions as well, such as:
     client.reconnect("Your server's passphrase"); // Reconnect to the server
     client.reconnect(25565); // Also works by port
