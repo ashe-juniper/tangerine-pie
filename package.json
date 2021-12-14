@@ -2,8 +2,13 @@
   "name": "tangerine-pie",
   "version": "0.1.0",
   "description": "A high-level P2P networking API built on-top of the Hypercore Protocol and the Atek Cloud.",
+  "type": "module",
   "main": "src/index.js",
+  "bin": {
+    "tangerine-pie": "bin/tangerine-pie"
+  },
   "scripts": {
+    "start": "node .",
     "test": "jest"
   },
   "repository": {
@@ -36,5 +41,13 @@
   "bugs": {
     "url": "https://github.com/Purple-Gem-Studio/tangerine-pie/issues"
   },
-  "homepage": "https://github.com/Purple-Gem-Studio/tangerine-pie#readme"
+  "homepage": "https://github.com/Purple-Gem-Studio/tangerine-pie#readme",
+  "dependencies": {
+    "@atek-cloud/network": "^0.0.5",
+    "ansi-escapes": "^5.0.0",
+    "hyperbeam": "^2.0.1",
+    "pump": "^3.0.0",
+    "random-port": "^0.1.0",
+    "serve-handler": "^6.1.3"
+  }
 }
