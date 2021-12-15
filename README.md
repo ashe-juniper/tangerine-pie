@@ -13,67 +13,46 @@ npm i tangerine-pie
 
 ## How-Tos
 
+### Hosting your current directory as a web server
+
+`server.js`
+```js
+import * as TangerinePie from '../src/index.js';
+
+console.log('Starting a web server in the current directory.');
+
+(async () => {
+    const publicKey = await TangerinePie.serve();
+
+    console.log(`Public key: ${publicKey}`);
+})();
+```
+
 ### Hosting a LAN world in Minecraft and joining it from another computer
 
 `server.js`
 ```js
-const TangerinePie = require('tangerine-pie');
+import * as TangerinePie from '../src/index.js';
 
-try {
-    // Create a new virtual server for your Minecraft server
-    const server = TangerinePie.Server.create({
-        passphrase: "Your Minecraft server's passphrase",
-        port: 25565
-    });
+console.log('Hosting the minecraft server.');
 
-    // Start the server
-    server.start();
-} catch {
-    console.log('Try a different domain, this one is already in-use!');
-}
+(async () => {
+    const publicKey = await TangerinePie.bind(25565);
 
-// Whenever you're done with the server, you can close it with the code below.
-// It is entirely optional, however, as Tangerine Pie will automatically close any remaining
-// child processes it created when this Node.js process stops.
-server.stop();
+    console.log('Public key:', publicKey);
+})();
 ```
 
 `client.js`
 ```js
-const TangerinePie = require('tangerine-pie');
+// usage: node examples/minecraft-server-join.js
+import * as TangerinePie from '../src/index.js';
 
-try {
-    // Create a new Tangerine client
-    const client = TangerinePie.Client.create();
-    
-    // Join the Minecraft server's virtual server
-    client.connect({
-        passphrase: "Your server's passphrase",
-        port: 25565 // This doesn't have to match the port the server used;
-                    // this is actually the port used by **your** computer,
-                    // not the server's.
-    });
-    
-    // At this point, you can now join the world by doing the following from the main menu in-game:
-    // 1. Press `Multiplayer`.
-    // 2. Press `Direct Connect`.
-    // 3. Type `localhost` as the server IP.
-    // 4. Press `Connect` to join the server.
-    
-    // There are a few QoL functions as well, such as:
-    client.reconnect("Your server's passphrase"); // Reconnect to the server
-    client.reconnect(25565); // Also works by port
+console.log('Joining the minecraft server.');
 
-    // When you're done, you can disconnect, although it's not strictly required.
-    // If you don't disconnect, Tangerine Pie will automatically disconnect the client
-    // for you when this Node.js process stops.
-    // Calling `disconnect()` on the client is only required if you wish to control when
-    // the client disconnects from the server.
-    client.disconnect(25565); // You can reference the server by port
-    client.disconnect("Your server's passphrase"); // or by passphrase
-} catch {
-    console.log('The server is not running right now.');
+(async () => {
+    const publicKey = await TangerinePie.bind(25565, process.argv[2]);
 
-    return;
-} 
+    console.log('Public key:', publicKey);
+})();
 ```
