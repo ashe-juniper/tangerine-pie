@@ -3,9 +3,10 @@ import path from 'path';
 import net from 'net';
 import pump from 'pump';
 import ansi from 'ansi-escapes';
+import randomPortPromise from 'random-port-promise';
 import serve from 'serve-handler';
 import * as AtekNet from '@atek-cloud/network';
-import { randomPortPromise, readKeyFile } from '../../lib/util.js';
+import { readKeyFile } from '../../lib/util.js';
 
 const DEFAULT_PORT = 8080;
 const DEFAULT_ROOT_DIRECTORY = '.';

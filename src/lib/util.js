@@ -9,12 +9,6 @@ export function isBuffer (v) {
   return Buffer.isBuffer(v)
 }
 
-export function randomPortPromise () {
-  return new Promise(resolve => {
-    randomPort(resolve)
-  })
-}
-
 export async function readKeyFile (keyfile) {
   let keyPair
   if (keyfile) {
